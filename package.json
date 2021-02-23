@@ -1,9 +1,22 @@
 {
     "name": "@didww/react-tooltip",
-    "version": "0.1.0",
+    "version": "1.0.0",
     "description": "Tooltip component",
     "main": "./lib/Tooltip.js",
     "license": "MIT",
+    "keywords": [
+        "DIDWW",
+        "tooltip"
+    ],
+    "author": "Kirill Paromonov",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/didww/react-tooltip.git"
+    },
+    "bugs": {
+        "url": "https://github.com/didww/react-tooltip/issues"
+    },
+    "homepage": "https://github.com/didww/react-tooltip#readme",
     "scripts": {
         "build": "webpack --mode production --display-modules"
     },
