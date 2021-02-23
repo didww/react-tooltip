@@ -1,0 +1,22 @@
+.react-tooltip {
+  &__wrapper {
+    padding: 5px;
+    padding-bottom: 6px;
+    box-sizing: border-box;
+    z-index: 10;
+    position: absolute;
+    backface-visibility: hidden;
+    transform: translateY(10px);
+    transition: transform 300ms, opacity 300ms;
+    opacity: 0;
+  }
+
+  &__content {
+    padding: 9px 10px;
+    border-radius: 3px;
+    border: solid 5px #edeef4;
+    background-color: #fff;
+    box-sizing: border-box;
+    box-shadow: 0 13px 16px -8px rgba(0, 0, 0, 0.21);
+  }
+}
