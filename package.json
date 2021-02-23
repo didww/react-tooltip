@@ -1,6 +1,6 @@
 {
     "name": "@didww/react-tooltip",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "Tooltip component",
     "main": "./lib/Tooltip.js",
     "license": "MIT",
@@ -18,7 +18,7 @@
     },
     "homepage": "https://github.com/didww/react-tooltip#readme",
     "scripts": {
-        "build": "webpack --mode production --display-modules"
+        "build": "webpack"
     },
     "peerDependencies": {
         "react": "^17.0.1",
