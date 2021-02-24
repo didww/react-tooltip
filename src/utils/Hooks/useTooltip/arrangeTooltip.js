@@ -17,6 +17,7 @@ function positionContentLeft(content, contentRect, triggerRect, triggerCenter) {
     content.style.right = 'auto';
     content.style.left = 'auto';
   } else {
+    content.style.left = 'auto';
     content.style.right = `${right - OFFSET}px`;
   }
 }
@@ -26,6 +27,7 @@ function positionContentRight(content, contentRect, triggerRect, triggerCenter) 
     content.style.right = 'auto';
     content.style.left = 'auto';
   } else {
+    content.style.right = 'auto';
     content.style.left = `${triggerCenter - OFFSET}px`;
   }
 }
@@ -73,6 +75,8 @@ function getVerticalDirection(placement, isFitTop, isFitBottom) {
 }
 
 export function arrangeTooltip(content, trigger, arrow, placement, maxWidth) {
+  if (!content || !trigger || !arrow) return;
+
   const contentRect = content.getBoundingClientRect();
   const triggerRect = trigger.getBoundingClientRect();
   const arrowRect = arrow.getBoundingClientRect();

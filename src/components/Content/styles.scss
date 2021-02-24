@@ -4,7 +4,7 @@
     padding-bottom: 6px;
     box-sizing: border-box;
     z-index: 10;
-    position: absolute;
+    position: fixed;
     backface-visibility: hidden;
     transform: translateY(10px);
     transition: transform 300ms, opacity 300ms;
