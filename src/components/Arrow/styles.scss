@@ -8,7 +8,7 @@
 
     &:after {
       content: "";
-      position: absolute;
+      position: fixed;
       bottom: -10px;
       left: -20px;
       width: 40px;
@@ -16,7 +16,7 @@
     }
 
     &__wrapper {
-      position: absolute;
+      position: fixed;
       z-index: 10;
       transform: translateY(10px);
       transition: transform 300ms, opacity 300ms;
