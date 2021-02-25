@@ -1,6 +1,10 @@
 /* eslint-disable no-param-reassign */
 const OFFSET = 22;
 
+function getScrollbarWidth() {
+  return window.innerWidth - document.documentElement.clientWidth;
+}
+
 function positionContentTop(content, triggerRect) {
   content.style.bottom = `${window.innerHeight - triggerRect.top}px`;
 }
@@ -47,7 +51,9 @@ function positionArrowBottom(arrow, triggerRect) {
 }
 
 function positionArrowLeft(arrow, arrowRect, triggerCenter) {
-  arrow.style.left = `${triggerCenter - (arrowRect.width / 2)}px`;
+  const scrollbarWidth = getScrollbarWidth();
+
+  arrow.style.left = `${triggerCenter - (arrowRect.width / 2) - scrollbarWidth}px`;
 }
 
 function positionArrowRight(arrow, arrowRect, triggerCenter) {
