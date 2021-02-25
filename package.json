@@ -1,6 +1,6 @@
 {
     "name": "@didww/react-tooltip",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "description": "Tooltip component",
     "main": "./lib/Tooltip.js",
     "license": "MIT",
