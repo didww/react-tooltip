@@ -65,7 +65,7 @@ export const useTooltip = ({
       makeVisible(arrow);
       animateFadeInUp(content);
       animateFadeInUp(arrow);
-      arrangeTooltip(content, trigger, arrow, placement, maxWidth);
+      arrangeTooltip(content, trigger, arrow, placement);
     } else {
       animateFadeOutDown(content);
       animateFadeOutDown(arrow);
