@@ -14,10 +14,10 @@ function positionContentBottom(content, contentRect, triggerRect) {
   content.style.bottom = `${window.innerHeight - triggerRect.bottom - contentRect.height - ARROW_HEIGHT}px`;
 }
 
-function positionContentLeft(content, contentRect, triggerRect, triggerCenter) {
+function positionContentLeft(content, contentRect, triggerCenter) {
   const right = window.innerWidth - triggerCenter;
 
-  if (triggerRect.left < contentRect.width - OFFSET) {
+  if (triggerCenter < contentRect.width - OFFSET) {
     content.style.right = 'auto';
     content.style.left = 'auto';
   } else {
@@ -80,25 +80,25 @@ function getVerticalDirection(placement, isFitTop, isFitBottom) {
   }
 }
 
-export function arrangeTooltip(content, trigger, arrow, placement, maxWidth) {
+export function arrangeTooltip(content, trigger, arrow, placement) {
   if (!content || !trigger || !arrow) return;
 
   const contentRect = content.getBoundingClientRect();
   const triggerRect = trigger.getBoundingClientRect();
   const arrowRect = arrow.getBoundingClientRect();
 
+  const triggerCenter = triggerRect.left + (triggerRect.width / 2);
+
   const isFitTop = contentRect.height < triggerRect.top;
   const isFitBottom = contentRect.height < (window.innerHeight - triggerRect.bottom);
   const isFitRight = (window.innerWidth - triggerRect.right) > contentRect.width - OFFSET;
-  const isFitLeft = triggerRect.left > contentRect.width - OFFSET;
-
-  const triggerCenter = triggerRect.left + (triggerRect.width / 2);
+  const isFitLeft = triggerCenter > contentRect.width - OFFSET;
 
   const horDirection = getHorizontalDirection(placement, isFitLeft, isFitRight);
 
   // Positioning horizontaly
   if (horDirection === 'left') {
-    positionContentLeft(content, contentRect, triggerRect, triggerCenter, maxWidth);
+    positionContentLeft(content, contentRect, triggerCenter);
     positionArrowLeft(arrow, arrowRect, triggerCenter);
   } else if (horDirection === 'right') {
     positionArrowRight(arrow, arrowRect, triggerCenter);
